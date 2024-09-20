@@ -29,6 +29,7 @@
       background-color: #f05a7e;
       transform: rotate(-45deg);
       margin: 50px;
+      display: none;
     }
 
     .heart::before,
@@ -84,6 +85,14 @@
     let heart = document.querySelector(".heart");
     heart.style.animation = "0.1s linear 1s infinite alternate slidein";
 
+    setTimeout(() => {
+      heart.style.display = "block";
+      heart.style.opacity = "0";
+
+      setTimeout(() => {
+        heart.style.opacity = "1";
+      }, 1000);
+    }, 1000);
     // const interval = setInterval(() => {
     //   number++;
 
